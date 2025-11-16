@@ -6,13 +6,13 @@
 /*   By: mcrenn <mcrenn@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 10:02:42 by mcrenn            #+#    #+#             */
-/*   Updated: 2025/11/14 10:06:24 by mcrenn           ###   ########.fr       */
+/*   Updated: 2025/11/15 18:59:21 by mcrenn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-int	ft_strlen(const char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 

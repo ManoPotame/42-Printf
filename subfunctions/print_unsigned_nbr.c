@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   print_unsigned_nbr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcrenn <mcrenn@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 10:08:24 by mcrenn            #+#    #+#             */
-/*   Updated: 2025/11/16 16:53:44 by mcrenn           ###   ########.fr       */
+/*   Created: 2025/11/14 11:01:24 by mcrenn            #+#    #+#             */
+/*   Updated: 2025/11/16 14:05:37 by mcrenn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-int	ft_intlen(int n)
+int	print_unsigned_nbr(unsigned int n)
 {
-	int	len_int;
+	int	count;
 
-	len_int = 0;
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
-	{
-		len_int++;
-		n *= -1;
-	}
-	while (n != 0)
-	{
-		n /= 10;
-		len_int++;
-	}
-	return (len_int);
+	count = 0;
+	if (n > 9)
+		count += print_unsigned_nbr(n / 10);
+	count += print_char(n % 10 + '0');
+	return (count);
 }
