@@ -2,7 +2,6 @@ NAME = libftprintf.a
 
 SRC =	ft_printf.c \
 		./subfunctions/ft_intlen.c \
-		./subfunctions/ft_sizetlen.c \
 		./subfunctions/ft_strlen.c \
 		./subfunctions/print_char.c \
 		./subfunctions/print_nbr_base.c \
@@ -31,4 +30,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY = all clean fclean re
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: mcrenn <mcrenn@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 09:18:51 by mcrenn            #+#    #+#             */
-/*   Updated: 2025/11/17 15:40:45 by mcrenn           ###   ########.fr       */
+/*   Updated: 2025/11/19 12:09:29 by mcrenn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 static int	type_print(const char *format, va_list args)
 {
+	int	i;
+
+	i = 0;
 	if (*format == 'c')
-		return (print_char(va_arg(args, int)));
+		i += print_char(va_arg(args, int));
 	else if (*format == 's')
-		return (print_str(va_arg(args, char *)));
+		i += print_str(va_arg(args, char *));
 	else if (*format == 'p')
-		return (print_pointer(va_arg(args, void *)));
+		i += print_pointer(va_arg(args, void *));
 	else if (*format == 'd' || *format == 'i')
-		return (print_nbr(va_arg(args, int)));
+		i += print_nbr(va_arg(args, int));
 	else if (*format == 'u')
-		return (print_unsigned_nbr(va_arg(args, unsigned int)));
+		i += print_unsigned_nbr(va_arg(args, unsigned int));
 	else if (*format == 'x')
-		return (print_nbr_base(va_arg(args, unsigned int), "0123456789abcdef"));
+		i += print_nbr_base(va_arg(args, unsigned int), "0123456789abcdef");
 	else if (*format == 'X')
-		return (print_nbr_base(va_arg(args, unsigned int), "0123456789ABCDEF"));
+		i += print_nbr_base(va_arg(args, unsigned int), "0123456789ABCDEF");
 	else if (*format == '%')
-		return (print_char('%'));
-	else
-		return (0);
+		i += print_char('%');
+	return (i);
 }
 
 int	ft_printf(const char *format, ...)
