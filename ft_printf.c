@@ -6,7 +6,7 @@
 /*   By: mcrenn <mcrenn@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 09:18:51 by mcrenn            #+#    #+#             */
-/*   Updated: 2025/11/16 16:52:38 by mcrenn           ###   ########.fr       */
+/*   Updated: 2025/11/17 15:40:45 by mcrenn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		count;
 
+	if (!format)
+		return (-1);
 	va_start(args, format);
 	count = 0;
 	while (*format)
