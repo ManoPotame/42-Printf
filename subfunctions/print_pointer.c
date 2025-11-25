@@ -6,7 +6,7 @@
 /*   By: mcrenn <mcrenn@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 18:52:54 by mcrenn            #+#    #+#             */
-/*   Updated: 2025/11/19 09:59:11 by mcrenn           ###   ########.fr       */
+/*   Updated: 2025/11/25 14:08:37 by mcrenn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	print_pointer(void *ptr)
 {
-	size_t	ulongptr;
-	int		lenulong;
+	size_t	ulong_ptr;
+	int		len_ulong;
 
 	if (!ptr)
 	{
 		write(1, "(nil)", 5);
 		return (5);
 	}
-	ulongptr = (size_t)ptr;
+	ulong_ptr = (size_t)ptr;
 	print_str("0x");
-	lenulong = print_nbr_base((unsigned long)ptr, "0123456789abcdef");
-	return (lenulong + 2);
+	len_ulong = print_nbr_base((unsigned long)ptr, "0123456789abcdef");
+	return (len_ulong + 2);
 }
